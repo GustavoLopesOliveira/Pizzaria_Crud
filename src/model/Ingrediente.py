@@ -25,3 +25,17 @@ class Ingrediente :
 
     def total_price(self,quantidade : int) -> float:
         return quantidade * self.__price
+
+    def to_dict(self) -> dict:
+        data = {
+            "id" : self.__id,
+            "name" : self.__name,
+            "price" : self.__price
+        }
+        return data
+
+    def __str__(self):
+        return f"Id : {self.__id} | Nome : {self.__name} | Preço : {self.__price}"
+
+    def to_list(self) -> list:
+        return [self.__id,self.__name,self.__price]

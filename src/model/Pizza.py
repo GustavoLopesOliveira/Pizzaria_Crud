@@ -22,3 +22,17 @@ class Pizza :
 
     def set_price(self,price : float) -> None:
         self.__price = price
+
+    def to_dict(self) -> dict:
+        data = {
+            "id" : self.__id,
+            "sabor" : self.__sabor,
+            "price" : self.__price
+        }
+        return data
+
+    def to_list(self) -> list:
+        return [self.__id,self.__sabor,self.__price]
+
+    def __str__(self) -> str:
+        return f"Id : {self.__id} | Sabor : {self.__sabor} | Preço : {self.__price}"
